@@ -1,0 +1,28 @@
+---
+title: "Inward"
+output: pdf_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#packages
+library(knitr)
+library(tidyverse)
+library(patchwork)
+```
+
+# Wrangling
+The first two lines read in the data. Then the `pivot_longer`'s take each row, identify the values with column labels from 1799 through 2099 and transforms the labels and values into two columns. For the fertility dataset, the first new column is labeled year and the second is labeled cpw. Finally, the tables are joined.
+```{r, tidy=TRUE, tidy.opts=list(comment=TRUE)}
+#can't get comments to show
+source("wrangling_code.R", echo = TRUE, local = knit_global())
+```
+
+# Visualization
+The data is filtered to the year 2021 and plotted. I changed the children per woman data to factors because the box plots require it. The last line, 'p1+p2`, uses the patchwork package.
+```{r}
+source("visualization.R", echo = TRUE, local = knit_global(), max.deparse.length = 450)
+visualization(data)
+```

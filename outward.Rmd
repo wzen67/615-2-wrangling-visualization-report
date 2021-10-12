@@ -1,0 +1,26 @@
+---
+title: "Outward"
+output: html_document
+---
+3043
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, include=FALSE}
+#should I put packages here or in R scripts?
+library(knitr)
+library(tidyverse)
+library(patchwork)
+```
+
+```{r, include=FALSE}
+#can't get comments to show
+source("wrangling_code.R", local = knit_global())
+```
+
+It appears that each box plot has more variance than the ones before it. Each category has fewer countries than the ones before so that probably explains it. 
+```{r}
+source("visualization.R", local = knit_global(), max.deparse.length = 450)
+visualization(data)
+```
