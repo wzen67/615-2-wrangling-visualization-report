@@ -16,3 +16,7 @@ visualization <- function(d) {
   
   p1 + p2
 }
+
+# Xiang Li: I think Will's code is clear and concise to understand. I suggest 
+# that the title,the legend and the interpretation could be more specific to the audience
+# for better understanding.
